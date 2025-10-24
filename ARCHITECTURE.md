@@ -1,6 +1,6 @@
 # Architecture Documentation
 
-Disclaimer : 99% auto generated and trimmed down to keep basic info.
+Disclaimer : file 99% auto generated and trimmed down to keep basic info.
 
 ## Executive Summary
 
