@@ -1,15 +1,10 @@
 # Instagram Stories Clone
 
-iOS app demonstrating Instagram-style stories with camera, reactions, and state persistence.
+An iOS app demonstrating Instagram-style stories with camera, reactions, and state persistence.
 
-Disclaimer : this app is mostly vibe-coded - my focus was on the UX to make this social app with fake users less lonely and exciting.
+**Disclaimer:** This app is mostly vibe-coded – my focus was on the UX to make this social app with fake users feel less lonely and exciting.
 
 ## Demo
-
-### Video Walkthrough
-
-
-
 
 ### Screenshots
 
@@ -24,32 +19,32 @@ Disclaimer : this app is mostly vibe-coded - my focus was on the UX to make this
   <img src="demo/story_view_swiping_down.jpg" width="200" alt="Swipe Down to Dismiss"/>
 </p>
 
-Emphasis was put on micro animation / gestures
-- floating bubbles in the story list view
-- pull moving around when new content is posted
-- Micro animation on heart touch then reactions trigering emojis shower
-- 3-D Rotation to swipe from/to user
-- Closing story by swiping down
+Special emphasis was put on micro-animations and gestures:
+- Floating bubbles in the story list view
+- Bubbles moving around when new content is posted
+- Micro-animation on heart touch, triggering emoji shower reactions
+- 3D rotation transitions when swiping between users
+- Intuitive story dismissal by swiping down
 
 ## Features
 
 **Story Viewing**
-- Story list with visual seen/unseen indicators (gradient vs gray rings)
+- Story list with visual seen/unseen indicators (gradient vs. gray rings)
 - Full-screen viewer with auto-advance timer
-- Instagram-style gestures (tap left/right, swipe down, long-press pause)
-- Horizontal scroll between users with 3D transitions (tough one)
-- Viewer count and list (view count is faked)
+- Instagram-style gestures (tap left/right, swipe down, long-press to pause)
+- Horizontal scroll between users with 3D transitions *(the tough one!)*
+- Viewer count and list *(view count is faked)*
 
 **Interactions**
 - 6 reaction types (❤️ 😂 😮 😢 😡 👍) with animated feedback
-- Reply input bar (faked)
-- Haptic feedback throughout (login, pull to refresh, ...)
+- Reply input bar *(faked & lacking a visual response)*
+- Haptic feedback throughout (login, pull-to-refresh, and more)
 
 **Creation**
-- AVFoundation camera with front/back switching - but please don't switch while filming :-)
-- 6 Image simple filters 
-- Simple Caption support
-- Text that can be moved around
+- AVFoundation camera with front/back switching
+- 6 simple image filters
+- Caption support
+- Moveable text elements
 
 **State Management**
 - Per-story, per-user viewed tracking
@@ -60,17 +55,7 @@ Emphasis was put on micro animation / gestures
 **Performance**
 - Aggressive image preloading (5-7 stories ahead)
 - Priority-based loading queue
-- LRU cache (40 images, 8 concurrent)
-
-## Architecture
-
-```
-Domain/     - Business logic (models, protocols, services)
-Data/       - Data sources and persistence
-Presentation/ - SwiftUI views, ViewModels, utilities
-```
-
-MVVM pattern with clean architecture principles.
+- Image cache to make things smooth
 
 ## Tech Stack
 
@@ -78,18 +63,14 @@ MVVM pattern with clean architecture principles.
 - AVFoundation (camera), Core Image (filters)
 - No external dependencies
 
-## Running
-
-Login as any user ID 1-20. App clears data on launch for demo purposes.
-
 ## Trade-offs
 
 **Not Implemented**
 - Backend API (using mock data)
-- Actual view count
-- Upload from device (camera prefered)
-- Tests (would add in production)
-- Error handling UI
-- Proper Network & Error management
+- Actual view count tracking
+- Upload from device photo library (camera preferred)
+- Unit/UI tests (would add in production)
+- Comprehensive error handling UI
+- Proper network & error management
 
-Lot of shortcuts were taken - like Stories data structure remembered which users viewed each Story.
+A lot of shortcuts were taken – for example, the Stories data structure remembers which users viewed each story, which isn't scalable - at all.
